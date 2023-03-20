@@ -1,0 +1,18 @@
+{% extends 'schedule/base.html' %}
+
+<!— base.html block content goes below -->
+{% block content %}
+<h2>HyperSchool</h2>
+<a href="/signup/">Sign Up</a>
+<br>
+<a href="/login/">Login</a>
+<form>
+    {% csrf_token %}
+    <input name="q" class="search">
+    <button type="submit">Search</button>
+</form>
+<p>{{ courses.count }} courses</p>
+    {% for course in courses %}
+    <p><a href="/schedule/course_details/{{course.id}}">{{ course.title }}</a></p>
+    {% endfor %}
+{% endblock %}

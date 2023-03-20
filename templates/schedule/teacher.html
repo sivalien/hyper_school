@@ -1,0 +1,9 @@
+{% extends 'schedule/base.html' %}
+
+<!— base.html block content goes below -->
+{% block content %}
+<h2>Name: {{ teacher.name }}</h2>
+<h2>Surname: {{ teacher.surname }}</h2>
+<p>Age: {{ teacher.age }} courses</p>
+<a href="{% url 'main' %}">Go back to the list of courses</a>
+{% endblock %}
